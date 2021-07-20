@@ -9,7 +9,7 @@ const { authentication, authorization } = require("./middleware/auth");
 const db = require("./models");
 const { urlencoded } = require("body-parser");
 
-const PORT = 8081;
+const PORT = process.env.PORT || 8081;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

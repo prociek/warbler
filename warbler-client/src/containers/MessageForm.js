@@ -13,9 +13,10 @@ class MessageForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addMessage(this.state.message);
-    this.setState({ message: "" });
-    this.props.history.push("/");
+    this.props.addMessage(this.state.message).then(() => {
+      this.setState({ message: "" });
+      this.props.history.push("/");
+    });
   };
 
   render() {
